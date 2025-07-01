@@ -14,7 +14,6 @@ conn = connect(
 cursor = conn.cursor()
 
 
-
 def check_connection():
     """
     检查并保持数据库连接
@@ -36,7 +35,7 @@ def login(id, password):
     try:
         check_connection()
         sql = "SELECT * FROM user WHERE id=%s AND password=%s"
-        cursor.execute(sql, (username, password))
+        cursor.execute(sql, (id, password))
         result = cursor.fetchone()
         return result is not None
     except pymysql.MySQLError as e:
@@ -78,11 +77,11 @@ def register(username, password):
 
 # ===== 测试代码区 =====
 if __name__ == '__main__':
-    username = '0'
-    password = '0'
+    id = '1'
+    password = '1'
     
     
-    if login(username, password):
+    if login(id, password):
         print("登录成功")
     else:
         print("登录失败，用户名或密码错误")
