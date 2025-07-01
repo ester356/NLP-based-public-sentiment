@@ -14,6 +14,7 @@ conn = connect(
 cursor = conn.cursor()
 
 
+
 def check_connection():
     """
     检查并保持数据库连接
@@ -46,7 +47,6 @@ def login(id, password):
         print(f"[其他错误] 登录失败: {e}")
         conn.rollback()
         return False
-
 def register(username, password):
     """
     注册函数：将新用户插入 user 表
@@ -78,13 +78,9 @@ def register(username, password):
 
 # ===== 测试代码区 =====
 if __name__ == '__main__':
-    username = '112'
-    password = '112'
+    username = '0'
+    password = '0'
     
-    if register(username, password):
-        print("注册成功")
-    else:
-        print("注册失败，可能用户已存在")
     
     if login(username, password):
         print("登录成功")
