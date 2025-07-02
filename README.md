@@ -1,5 +1,4 @@
-# NLP-based-public-sentiment
-# **基于NLP的舆情分析平台**
+# **NLP-based-public-sentiment 基于NLP的舆情分析平台**
 
 ---
 
