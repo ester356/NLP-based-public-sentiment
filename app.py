@@ -1,7 +1,8 @@
 from flask import Flask,session,request,redirect,render_template
 import re
 from flask_socketio import SocketIO, emit
-from views.user import user
+from routes.user_login import user
+from routes.page import page_app
 
 
 app = Flask(__name__)
@@ -10,7 +11,8 @@ app.secret_key = 'this is secret_key you know ?'
 socketio = SocketIO(app)
 
 
-app.register_blueprint(user.ub)
+app.register_blueprint(user)
+app.register_blueprint(page_app)
 
 
 @app.route('/')
